@@ -1,14 +1,11 @@
-#include "Game.h"
-
+#include "Definitions.h"
+#include "RuntimeManager.h"
 
 int main()
 {
-    // Create a new instance of the game
-    Game game;
+    RuntimeManager* runtimeManager = new RuntimeManager();
 
-    // Run the game
-    game.run();
-
+    runtimeManager->run();
     // Return success
     return 0;
 }

@@ -1,0 +1,78 @@
+MainMenu
+    clear
+    wait 200
+    write 0 false "\n\n\t\t\t               __\n\t\t\t              / _)\n\t\t\t     _/\\/\\/\\_/ /\n\t\t\t   _|         /\n\t\t\t _|     |    |\n\t\t\t/__.-'|_|--|_|  \n\t\t\t\t\t"
+    write 1 false "maybe i am god"
+    wait 1500
+    write 0 true "\n\n   _____ _____        _____ ______   _____ _____ _   _  ____   _____        _    _ _____  \n  / ____|  __ \\ /\\   / ____|  ____| |  __ \\_   _| \\ | |/ __ \\ / ____|  /\\  | |  | |  __ \\ \n |  ___ | |__) /  \\ | |    | |__    | |  | || | |  \\| | |  | |  ___   /  \\ | |  | | |__) |\n  \\___ \\|  ___/ /\\ \\| |    |  __|   | |  | || | | . ` | |  | |\\___ \\ / /\\ \\| |  | |  _  / \n  ____) | |  / ____ \\ |____| |____  | |__| || |_| |\\  | |__| |____) / ____ \\ |__| | | \\ \\ \n |_____/|_| /_/    \\_\\_____|______| |_____/_____|_| \\_|\\____/|_____/_/    \\_\\____/|_|  \\_\\\n\n\n"
+
+    wait 500
+
+    while true
+
+        write 0 true "\n\tMAIN MENU\n"
+        wait 300
+
+        write 0 true "\tWhat would you like to do?"
+        write 0 true "\t1. Start a new game"
+        write 0 true "\t2. Load a saved game"
+        write 0 true "\t3. Options"
+        write 0 true "\t4. Credits"
+        write 0 true "\t5. Quit"
+
+        prompt choice "[HELP]$ Enter the corresponding number:"
+
+        if choice 1
+            next StartGame 
+            break
+        elif choice 2
+            next LoadGame 
+            break
+        elif choice 3
+            next GameOptions 
+        elif choice 4
+            next GameCredits
+        elif choice 5
+            next GameQuit 
+            break
+        else
+            continue
+        }
+
+        clear
+    }
+    return
+]
+
+StartGame
+    
+    clear
+    write 0 false "\n\n\t\t\t               __\n\t\t\t              / _)\n\t\t\t     _/\\/\\/\\_/ /\n\t\t\t   _|         /\n\t\t\t _|  (  | (  |\n\t\t\t/__.-'|_|--|_|  \n\t\t\t\t\t"
+
+    prompt name "What is my name?"
+
+    set terminalName name
+    wait 400
+
+    write 0 true "\tok now i remember.\n"
+    wait 300
+
+    write 1 true "\r\ti guess i should wake up now..."
+    wait 300
+    write 1 true "\r\ti dont know where i am"
+
+    prompt msg "[HELP]$ Let's test out those motor commands. Try looking around."
+    
+    count 0
+
+    while count < 5
+        run command
+        
+        if similar look or similar move or similar jump 
+            count++
+        }
+    }
+    
+
+    return
+]
